@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getUser } from "../auth";
+const user = await getUser(Astro.request);
+if (!user) {
+  return Astro.redirect("/login");
+}
+---
+
+<Layout title="My Account">
+  This page is protected by Supabase authentication.
+</Layout>

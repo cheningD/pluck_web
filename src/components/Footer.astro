@@ -1,15 +1,16 @@
 ---
 ---
 
-<footer>
-  <a href="/">Home</a>
-  <a href="/shop">Shop</a>
-  <a href="/orders">Orders</a>
-  <a href="/cart">Cart</a>
-  <a href="/account">Account</a>
+<footer class="mobilenav">
+  <a class="footerlink" href="/">Home</a>
+  <a class="footerlink" href="/shop">Shop</a>
+  <a class="footerlink" href="/orders">Orders</a>
+  <a class="footerlink" href="/cart">Cart</a>
+  <a class="footerlink" href="/account">Account</a>
 </footer>
+
 <style>
-  footer {
+  .mobilenav {
     background-color: #eaeaea;
     position: fixed;
     bottom: 0;
@@ -19,11 +20,10 @@
     display: flex;
     justify-content: space-around;
   }
-  a {
+  .footerlink {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: inherit; /* blue colors for links too */
-    text-decoration: inherit; /* no underline */
+    color: rgb(50, 45, 45); /* blue colors for links too */
   }
 </style>

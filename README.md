@@ -1,14 +1,17 @@
-# Astro Starter Kit: Minimal
+# Pluck.eco Web Frontend
 
-```
-npm create astro@latest -- --template minimal
-```
+## Setting up the environment
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+You will need the supabase variables to connect to supabase. Add them to a .env file like this:
+`touch .env`
+`echo 'PUBLIC_SUPABASE_URL=https://<supabase-url>.supabase.co' >> .env`
+`echo 'PUBLIC_SUPABASE_KEY=the_key_xxx' >> .env`
+`echo 'PUBLIC_REDIRECT_URL=http://localhost:3000/magic-link' >> .env`
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Authentication
+
+Authentication is handled by supabase. Using https://github.com/magnuswahlstrand/astro-supabase-vercel as an example, we are able to check the user's login status, or query the database on the server.
+This simplifies the frontend (by requiring less javascript to update the page), and speeds up page load for pages that do not need that data.
 
 ## 🚀 Project Structure
 
@@ -19,7 +22,9 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── public/
 ├── src/
 │   └── pages/
-│       └── index.astro
+│   |   └── index.astro
+|   └── layouts
+|       └── Layout.astro
 └── package.json
 ```
 
@@ -33,14 +38,14 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command                    | Action                                           |
+| :------------------------- | :----------------------------------------------- |
+| `yarn install`             | Installs dependencies                            |
+| `yarn run dev`             | Starts local dev server at `localhost:3000`      |
+| `yarn run build`           | Build your production site to `./dist/`          |
+| `yarn run preview`         | Preview your build locally, before deploying     |
+| `yarn run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `yarn run astro -- --help` | Get help using the Astro CLI                     |
 
 ## 👀 Want to learn more?
 

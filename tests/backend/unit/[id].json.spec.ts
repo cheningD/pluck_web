@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { get } from '../../../src/pages/[id]'
+import { get } from '../../../src/pages/[id].json'
 
 test('get product json', async () => {
     const response = await get({ params: { id: 'helmet' } })

@@ -2,6 +2,7 @@
   "name": "pluck-web",
   "type": "module",
   "version": "0.0.1",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -19,20 +20,20 @@
     "test:f:intg": "playwright test -c playwright-ct.config.ts tests/frontend/integration"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^6.2.3",
+    "@astrojs/cloudflare": "^6.5.1",
     "@astrojs/react": "^2.2.1",
-    "@astrojs/solid-js": "^2.1.0",
-    "@babel/core": "^7.0.0",
-    "@fontsource/manrope": "^4.5.13",
-    "@supabase/supabase-js": "^2.21.0",
+    "@astrojs/solid-js": "^2.2.0",
+    "@babel/core": "^7.22.5",
+    "@fontsource/manrope": "^5.0.3",
+    "@supabase/supabase-js": "^2.26.0",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "astro": "^2.3.2",
+    "astro": "^2.7.0",
     "cookie": "^0.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "solid-js": "^1.4.3",
-    "vite": "^4.2.0"
+    "solid-js": "^1.7.6",
+    "vite": "^4.3.9"
   },
   "devDependencies": {
     "@playwright/experimental-ct-react": "^1.35.1",

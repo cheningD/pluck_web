@@ -121,7 +121,11 @@
   resolved "https://registry.npmjs.org/@babel/compat-data/-/compat-data-7.22.5.tgz"
   integrity sha512-4Jc/YuIaYqKnDDz892kPIledykKg12Aw1PYX5i/TY28anJtacvM1Rrr8wbieB9GfEJwlzqT0hUEao0CxEebiDA==
 
+<<<<<<< Updated upstream
 "@babel/core@>=7.0.0-0 <8.0.0", "@babel/core@^7.18.2", "@babel/core@^7.22.5":
+=======
+"@babel/core@>=7.0.0-0 <8.0.0", "@babel/core@^7.0.0", "@babel/core@^7.18.2", "@babel/core@^7.22.5":
+>>>>>>> Stashed changes
   version "7.22.5"
   resolved "https://registry.npmjs.org/@babel/core/-/core-7.22.5.tgz"
   integrity sha512-SBuTAjg91A3eKOvD+bPEz3LlhHZRNu1nFOVts9lzDJTXshHTjII0BAtDS3Y2DAkdZdDKWVZGVwkDfc4Clxn1dg==
@@ -3612,7 +3616,11 @@ vfile@^5.0.0, vfile@^5.3.2:
     unist-util-stringify-position "^3.0.0"
     vfile-message "^3.0.0"
 
+<<<<<<< Updated upstream
 vite@^4.3.1, vite@^4.3.9:
+=======
+vite@^4.2.0, vite@^4.3.1, vite@^4.3.9:
+>>>>>>> Stashed changes
   version "4.3.9"
   resolved "https://registry.npmjs.org/vite/-/vite-4.3.9.tgz"
   integrity sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==

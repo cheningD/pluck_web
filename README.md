@@ -38,23 +38,25 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                    | Action                                           |
-| :------------------------- | :----------------------------------------------- |
-| `yarn install`             | Installs dependencies                            |
-| `yarn run dev`             | Starts local dev server at `localhost:3000`      |
-| `yarn run build`           | Build your production site to `./dist/`          |
-| `yarn run preview`         | Preview your build locally, before deploying     |
-| `yarn run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `yarn run astro -- --help` | Get help using the Astro CLI                     |
-| `yarn run test`            | Run all tests                                    |
-| `yarn run test:ui`         | Run all tests in UI mode                         |
-| `yarn run test:e2e`        | Run all end-to-end tests                         |
-| `yarn run test:b`          | Run all backend tests                            |
-| `yarn run test:b:unit`     | Run all backend unit tests                       |
-| `yarn run test:b:intg`     | Run all backend integration tests                |
-| `yarn run test:f`          | Run all frontend tests                           |
-| `yarn run test:f:unit`     | Run all frontend unit tests                      |
-| `yarn run test:f:intg`     | Run all frontend integration tests               |
+| Command                    | Action                                                       |
+| :------------------------- | :----------------------------------------------------------- |
+| `yarn install`             | Installs dependencies                                        |
+| `yarn run dev`             | Starts local dev server at `localhost:3000`                  |
+| `yarn run build`           | Build your production site to `./dist/`                      |
+| `yarn run preview`         | Preview your build locally, before deploying                 |
+| `yarn run astro ...`       | Run CLI commands like `astro add`, `astro check`             |
+| `yarn run astro -- --help` | Get help using the Astro CLI                                 |
+| `yarn run test`            | Run all tests                                                |
+| `yarn run test:ui`         | Run all tests in UI mode                                     |
+| `yarn run test:e2e`        | Run all end-to-end tests                                     |
+| `yarn run test:b`          | Run all backend tests                                        |
+| `yarn run test:b:unit`     | Run all backend unit tests                                   |
+| `yarn run test:b:intg`     | Run all backend integration tests                            |
+| `yarn run test:f`          | Run all frontend tests                                       |
+| `yarn run test:f:unit`     | Run all frontend unit tests                                  |
+| `yarn run test:f:intg`     | Run all frontend integration tests                           |
+| `yarn run lint`            | Runs ESLint to perform linting on .js, .ts, and .astro files |
+| `yarn run lint:style`      | Executes Stylelint to perform linting on all CSS files       |
 
 ## 🧪 Testing
 
@@ -104,6 +106,53 @@ Create add a new test file into one of the test folders. Remember to name your t
 
 You can run a single test or several tests at once, testing one or multiple browsers. By default, your test results will be shown in the terminal. Optionally, you can open the HTML Test Reporter to show a full report and filter test results. Refer to the commands section
 for more details. For more information on running tests, see [Running Tests](https://playwright.dev/docs/running-tests).
+
+### 👠 Styling
+
+This project utilizes a combination of tools and extensions for styling and maintaining consistent code formatting. The following sections outline the setup and configuration for each tool.
+
+#### Prettier ESLint
+
+[ESLint](https://ota-meshi.github.io/eslint-plugin-astro/user-guide/?utm_source=coda&utm_medium=iframely) is a linter that helps identify and enforce coding standards, detect potential errors, and improve code quality. [Prettier ESLint](https://github.com/idahogurl/vs-code-prettier-eslint) integrates [Prettier](https://docs.astro.build/en/editor-setup/#prettier) into ESLint for code formatting.
+
+To run ESLint and Prettier ESLint for JavaScript, TypeScript, and Astro files, use the following command:
+
+```
+yarn lint
+```
+
+The ESLint and Prettier ESLint configurations are defined in the .eslintrc. and .prettierrc files at the project root, respectively.
+
+To exclude certain lines from being restyled by Prettier, you can add a comment with prettier-ignore at the end of those lines. For example:
+
+```
+// prettier-ignore
+const ignoredLine = "This line will not be reformatted";
+```
+
+View the [Prettier documentation](https://prettier.io/docs/en/ignore.html) for more information on ignoring code.
+
+#### StyleLint
+
+[Stylelint](https://stylelint.io/user-guide/get-started/) is a linter specifically designed for CSS and CSS-like syntaxes. It helps identify and enforce consistent coding conventions and catches potential errors in stylesheets.
+
+To run Stylelint and check for linting issues in CSS files, use the following command:
+
+```
+yarn lint:style
+```
+
+The Stylelint configuration is defined in the .stylelintrc file at the project root.
+
+#### Astro
+
+This project uses the [Astro extension for Visual Studio Code](https://docs.astro.build/en/editor-setup/#vs-code), which provides the following features:
+
+- Syntax highlighting for .astro files.
+- TypeScript type information for .astro files.
+- [VS Code IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) for code completion, hints, and more.
+
+Make sure to install the Astro extension in your Visual Studio Code editor for an enhanced development experience.
 
 ## 👀 Want to learn more?
 

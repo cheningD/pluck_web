@@ -1,16 +1,17 @@
-import { createSignal } from "solid-js";
-import { supabase } from "../auth";
+import { createSignal } from 'solid-js';
+import { supabase } from '../auth';
+import React from 'react';
 
 export default function Login() {
-  const [email, setEmail] = createSignal("");
+  const [email, setEmail] = createSignal('');
   const [status, setStatus] = createSignal({
-    error: "",
+    error: '',
     success: false,
     isLoading: false,
   });
 
   const handleSendLink = async () => {
-    setStatus({ error: "", success: false, isLoading: true });
+    setStatus({ error: '', success: false, isLoading: true });
 
     const { error } = await supabase.auth.signInWithOtp(
       {
@@ -18,7 +19,7 @@ export default function Login() {
       },
       {
         redirectTo: import.meta.env.PUBLIC_REDIRECT_URL,
-      }
+      },
     );
 
     if (error?.message) {
@@ -28,7 +29,7 @@ export default function Login() {
         isLoading: false,
       }));
     } else {
-      setStatus({ error: "", success: true, isLoading: false });
+      setStatus({ error: '', success: true, isLoading: false });
     }
   };
 
@@ -53,7 +54,7 @@ export default function Login() {
           disabled={status().isLoading}
           type="button"
           onClick={handleSendLink}
-          aria-busy={status().isLoading ? "true" : "false"}
+          aria-busy={status().isLoading ? 'true' : 'false'}
         >
           Send magic link to your email!
         </button>

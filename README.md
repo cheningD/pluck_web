@@ -107,13 +107,13 @@ Create add a new test file into one of the test folders. Remember to name your t
 You can run a single test or several tests at once, testing one or multiple browsers. By default, your test results will be shown in the terminal. Optionally, you can open the HTML Test Reporter to show a full report and filter test results. Refer to the commands section
 for more details. For more information on running tests, see [Running Tests](https://playwright.dev/docs/running-tests).
 
-### 👠 Styling
+## 👠 Styling
 
 This project utilizes a combination of tools and extensions for styling and maintaining consistent code formatting. The following sections outline the setup and configuration for each tool.
 
-#### Prettier ESLint
+### Prettier ESLint
 
-[ESLint](https://ota-meshi.github.io/eslint-plugin-astro/user-guide/?utm_source=coda&utm_medium=iframely) is a linter that helps identify and enforce coding standards, detect potential errors, and improve code quality. [Prettier ESLint](https://github.com/idahogurl/vs-code-prettier-eslint) integrates [Prettier](https://docs.astro.build/en/editor-setup/#prettier) into ESLint for code formatting.
+[ESLint](https://ota-meshi.github.io/eslint-plugin-astro/user-guide/?utm_source=coda&utm_medium=iframely) is a linter that helps identify and enforce coding standards, detect potential errors, and improve code quality. [Prettier ESLint](https://github.com/idahogurl/vs-code-prettier-eslint) integrates [Prettier](https://docs.astro.build/en/editor-setup/#prettier) into ESLint for code formatting. The [CLI](https://github.com/prettier/prettier-eslint-cli) will also be necessary.
 
 To run ESLint and Prettier ESLint for JavaScript, TypeScript, and Astro files, use the following command:
 
@@ -144,7 +144,7 @@ yarn lint:style
 
 The Stylelint configuration is defined in the .stylelintrc file at the project root.
 
-#### Astro
+### Astro
 
 This project uses the [Astro extension for Visual Studio Code](https://docs.astro.build/en/editor-setup/#vs-code), which provides the following features:
 

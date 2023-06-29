@@ -18,9 +18,9 @@
     "test:f": "playwright test -c playwright-ct.config.ts tests/frontend",
     "test:f:unit": "playwright test -c playwright-ct.config.ts tests/frontend/unit",
     "test:f:intg": "playwright test -c playwright-ct.config.ts tests/frontend/integration",
-    "lint": "eslint --ext .js,.ts,.astro .",
+    "lint": "eslint --ext .js,.ts .",
     "lint:style": "npx stylelint \"src/**/*.css\"",
-    "lint:markup": "npx htmlhint \"src/**/*.astro\" \"src/**/*.html\""
+    "lint:markup": "npx htmlhint \"src/**/*.html\""
   },
   "dependencies": {
     "@astrojs/cloudflare": "^6.5.1",

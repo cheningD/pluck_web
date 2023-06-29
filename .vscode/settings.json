@@ -1,7 +1,40 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "playwright.showTrace": false,
+    "playwright.reuseBrowser": false,
     "editor.formatOnType": false, // required
+    "editor.formatOnSave": true,
     "editor.formatOnPaste": true, // optional
-    "editor.formatOnSave": true, // optional
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSaveMode": "file", // required to format on save
+    "files.autoSave": "onFocusChange", // optional but recommended
+    "htmlhint.options": {},
+    "stylelint.config": {}, // set as "true" to run 'prettier' last not first
+    "eslint.workingDirectories": [],
+    "prettier.documentSelectors": [
+        "**/*.astro"
+    ],
+    "[astro]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "eslint.probe": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        //"astro",
+        "html",
+        "vue",
+        "markdown",
+    ],
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        // "astro",
+        "typescriptreact"
+    ],
+    "htmlhint.documentSelector": [
+        "html",
+        "htm",
+    ],
 }

@@ -7,7 +7,16 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:e2e": "playwright test tests/e2e",
+    "test:b": "playwright test tests/backend",
+    "test:f": "playwright test tests/frontend",
+    "test:b:unit": "playwright test tests/backend/unit",
+    "test:f:unit": "playwright test tests/frontend/unit",
+    "test:b:integration": "playwright test tests/backend/integration",
+    "test:f:integration": "playwright test tests/frontend/integration"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^6.2.3",
@@ -19,6 +28,7 @@
     "solid-js": "^1.4.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.35.1",
     "@types/cookie": "^0.5.1"
   }
 }

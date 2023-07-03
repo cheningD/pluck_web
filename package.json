@@ -16,19 +16,27 @@
     "test:b:unit": "playwright test tests/backend/unit",
     "test:f:unit": "playwright test tests/frontend/unit",
     "test:b:integration": "playwright test tests/backend/integration",
-    "test:f:integration": "playwright test tests/frontend/integration"
+    "test:f:integration": "playwright test tests/frontend/integration",
+    "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^6.2.3",
+    "@astrojs/react": "^2.2.1",
     "@astrojs/solid-js": "^2.1.0",
     "@fontsource/manrope": "^4.5.13",
     "@supabase/supabase-js": "^2.21.0",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
     "astro": "^2.3.2",
     "cookie": "^0.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "solid-js": "^1.4.3"
   },
   "devDependencies": {
+    "@playwright/experimental-ct-react": "^1.35.1",
     "@playwright/test": "^1.35.1",
+    "@testing-library/react": "^14.0.0",
     "@types/cookie": "^0.5.1"
   }
 }

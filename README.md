@@ -55,6 +55,7 @@ All commands are run from the root of the project, from a terminal:
 | `yarn run test:f`             | Run all frontend tests                           |
 | `yarn run test:f:unit`        | Run all frontend unit tests                      |
 | `yarn run test:f:integration` | Run all frontend integration tests               |
+| `yarn run test-ct`            | Run all component tests                          |
 
 ## 🧪 Testing
 
@@ -87,6 +88,14 @@ Alternatively, you can install Playwright within your Astro project using the pa
 ```
 yarn create playwright
 ```
+
+Since we are using Playwright for all testing, we need to further install Playwright Test for components for our respective framework (React, Vue, Svelte, etc.). For example, if you are using React, you would run:
+
+```
+npm init playwright@latest -- --ct
+```
+
+Note: We need to set the test directory to `tests/frontend/unit` to only run unit tests for our frontend.
 
 #### Create your first Playwright test
 

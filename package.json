@@ -8,16 +8,15 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "playwright test",
-    "test:ui": "playwright test --ui",
+    "test": "playwright test -c playwright-ct.config.ts",
+    "test:ui": "yarn test --ui",
     "test:e2e": "playwright test tests/e2e",
-    "test:b": "playwright test tests/backend",
-    "test:f": "playwright test tests/frontend",
-    "test:b:unit": "playwright test tests/backend/unit",
-    "test:f:unit": "playwright test tests/frontend/unit",
-    "test:b:integration": "playwright test tests/backend/integration",
-    "test:f:integration": "playwright test tests/frontend/integration",
-    "test-ct": "playwright test -c playwright-ct.config.ts"
+    "test:b": "playwright test -c playwright-ct.config.ts tests/backend",
+    "test:b:unit": "playwright test -c playwright-ct.config.ts tests/backend/unit",
+    "test:b:intg": "playwright test -c playwright-ct.config.ts tests/backend/integration",
+    "test:f": "playwright test -c playwright-ct.config.ts tests/frontend",
+    "test:f:unit": "playwright test -c playwright-ct.config.ts tests/frontend/unit",
+    "test:f:intg": "playwright test -c playwright-ct.config.ts tests/frontend/integration"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^6.2.3",
@@ -35,7 +34,6 @@
   },
   "devDependencies": {
     "@playwright/experimental-ct-react": "^1.35.1",
-    "@playwright/test": "^1.35.1",
     "@testing-library/react": "^14.0.0",
     "@types/cookie": "^0.5.1"
   }

@@ -38,24 +38,23 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                       | Action                                           |
-| :---------------------------- | :----------------------------------------------- |
-| `yarn install`                | Installs dependencies                            |
-| `yarn run dev`                | Starts local dev server at `localhost:3000`      |
-| `yarn run build`              | Build your production site to `./dist/`          |
-| `yarn run preview`            | Preview your build locally, before deploying     |
-| `yarn run astro ...`          | Run CLI commands like `astro add`, `astro check` |
-| `yarn run astro -- --help`    | Get help using the Astro CLI                     |
-| `yarn run test`               | Run all tests in `tests`                         |
-| `yarn run test:ui`            | Run all tests in `tests` in UI mode              |
-| `yarn run test:e2e`           | Run all end-to-end tests                         |
-| `yarn run test:b`             | Run all backend tests                            |
-| `yarn run test:b:unit`        | Run all backend unit tests                       |
-| `yarn run test:b:integration` | Run all backend integration tests                |
-| `yarn run test:f`             | Run all frontend tests                           |
-| `yarn run test:f:unit`        | Run all frontend unit tests                      |
-| `yarn run test:f:integration` | Run all frontend integration tests               |
-| `yarn run test-ct`            | Run all component tests                          |
+| Command                    | Action                                           |
+| :------------------------- | :----------------------------------------------- |
+| `yarn install`             | Installs dependencies                            |
+| `yarn run dev`             | Starts local dev server at `localhost:3000`      |
+| `yarn run build`           | Build your production site to `./dist/`          |
+| `yarn run preview`         | Preview your build locally, before deploying     |
+| `yarn run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `yarn run astro -- --help` | Get help using the Astro CLI                     |
+| `yarn run test`            | Run all tests                                    |
+| `yarn run test:ui`         | Run all tests in UI mode                         |
+| `yarn run test:e2e`        | Run all end-to-end tests                         |
+| `yarn run test:b`          | Run all backend tests                            |
+| `yarn run test:b:unit`     | Run all backend unit tests                       |
+| `yarn run test:b:intg`     | Run all backend integration tests                |
+| `yarn run test:f`          | Run all frontend tests                           |
+| `yarn run test:f:unit`     | Run all frontend unit tests                      |
+| `yarn run test:f:intg`     | Run all frontend integration tests               |
 
 ## 🧪 Testing
 
@@ -89,7 +88,7 @@ Alternatively, you can install Playwright within your Astro project using the pa
 yarn create playwright
 ```
 
-Since we are using Playwright for all testing, we need to further install Playwright Test for components for our respective framework (React, Vue, Svelte, etc.). For example, if you are using React, you would run:
+Since we are using Playwright for all testing, we need to further install Playwright Test for [components](https://playwright.dev/docs/test-components) for our respective framework (React, Vue, Svelte, etc.). For example, if you are using React, you would run:
 
 ```
 npm init playwright@latest -- --ct

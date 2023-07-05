@@ -1,18 +1,18 @@
-name: Database Migrations
+name: Deploy Function
 
 on:
   push:
-    branches: [main, db-migrations]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
-  release:
+  deploy:
     runs-on: ubuntu-latest
 
     env:
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-      SUPABASE_DB_PASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
-      SUPABASE_PROJECT_ID: ${{ secrets.PRODUCTION_PROJECT_ID }}
+      PROJECT_ID: bxwmvfvaidkflmnmdndr
 
     steps:
       - uses: actions/checkout@v3
@@ -21,5 +21,4 @@ jobs:
         with:
           version: latest
 
-      # - run: npx supabase link --project-ref $SUPABASE_PROJECT_ID
-      - run: npx supabase db push
+      - run: supabase functions deploy github-action-deploy --project-ref $PROJECT_ID

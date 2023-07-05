@@ -2,8 +2,7 @@ name: Deploy Migrations to Production
 
 on:
   push:
-    branches:
-      - main
+    branches: [main, db-migrations]
   workflow_dispatch:
 
 jobs:

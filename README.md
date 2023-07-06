@@ -74,7 +74,7 @@ To update the production environment with local changes and push them to product
    - To link your local database to your production database, use `npx supabase link --project-ref [ref]`. Replace `[ref]` with your project reference. During this process, you'll be asked for your database password to apply migration scripts.
 4. Creating Migration Scripts Based on Changes:
    - To compare the structure of the local and production databases, use `npx supabase db diff --use-migra [name] -f [name]`. This will generate a migration script that captures the required changes. For example, if it’s your first commit, run `npx supabase db diff --use-migrate init -f init`.
-   - To apply the new migration to your local database, run `supabase db reset`.
+   - To apply the new migration to your local database, run `npx supabase db reset`.
 5. Pushing Changes to the Production Database:
    - You will need to integrate `.yml` code into your project. This can be found at: [Configure GitHub Actions](https://supabase.com/docs/guides/cli/managing-environments#configure-github-actions).
    - It also requires adding `SUPABASE_ACCESS_TOKEN`, `PRODUCTION_DB_PASSWORD`, and `PRODUCTION_PROJECT_ID` to your Cloudflare Environment Variables.

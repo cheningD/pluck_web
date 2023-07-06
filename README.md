@@ -88,7 +88,7 @@ To perform database rollbacks (i.e., downgrading the database), follow these ste
 
 At present, Supabase does not have rollback functionality for migrations, as it only supports forward progression.
 
-You can create a new migration that undoes the previous migration's actions.
+You can create a new migration that [undoes the previous migration's actions](https://supabase.com/docs/guides/cli/managing-environments#create-a-new-migration).
 
 In the future, we may consider switching to tools like Prisma that offer migration rollback capabilities. Alternatively, Supabase might introduce rollback functionality of its own.
 
@@ -102,11 +102,11 @@ This process enables the creation of a staging or development environment databa
    - Sign up for Snaplet.
    - Obtain the database string from Supabase.
    - Follow the tutorial provided to create a snapshot.
-   - Run the command `curl -sL https://app.snaplet.dev/get-cli/ | bash` to install the Snaplet CLI.
-   - Set up Snaplet authentication by running `snaplet auth setup` (you'll need a `SNAPLET_ACCESS_TOKEN`).
-   - Set up the Snaplet project by running `snaplet project setup` and selecting your project.
-   - Configure Snaplet by running `snaplet config setup` and executing `npx supabase status` to retrieve the database URL.
-   - Finally, restore the latest snapshot to your target database by running `snaplet snapshot restore`. This command downloads the snapshot and applies it to your database.
+   - Run the command `curl -sL https://app.snaplet.dev/get-cli/ | bash` or `npm install --dev snaplet` to install the Snaplet CLI.
+2. Setup snaplet CLI in your local project:
+   - Run `snaplet setup`. Note: you'll need a `SNAPLET_ACCESS_TOKEN` and a `DB URL` (run `npx supabase status` to get it).
+3. Restore the latest snapshot to your target database:
+   - Run `snaplet snapshot restore`. This command downloads the snapshot and applies it to your database.
 
 Following these steps will enable you to create a local database that closely resembles your production environment.
 

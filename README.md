@@ -59,6 +59,57 @@ All commands are run from the root of the project, from a terminal:
 | `yarn run lint:style`      | Executes Stylelint to perform linting on all CSS files |
 | `yarn run lint:markup`     | Executes HTMLHint to perform linting on all HTML files |
 
+## ✈️ Database Migrations
+
+To update the production environment with local changes and push them to production, follow these steps:
+
+1. Installing the Supabase CLI: Use the command `brew install supabase/tap/supabase` to install the Supabase CLI. If you're using Codespaces, you can skip this step.
+2. Setting up a Supabase Instance Locally:
+   - Start by initializing Supabase using the `npx supabase init` command.
+   - Next, you need to add the `SUPABASE_ACCESS_TOKEN` to your `.env` file which contains environment variables.
+   - If your database is already filled with data, use `npx supabase db remote commit` to create a new migration in `supabase/migrations/<timestamp>_remote_commit.sql`, reflecting your prior schema changes. After creating this migration, commit your local changes to Git and set up the local development environment.
+   - To start the Supabase instance, use the `npx supabase start` command. Make sure Docker is installed, or use Codespaces. This step might take a couple minutes initially. Once it's running, you will be provided with several URLs. The most important ones are the database URL and the Studio URL.
+3. Linking Local Database to the Production Database:
+   - Log into Supabase CLI using `npx supabase login`. You will be prompted to provide the `supabase_access_token`.
+   - To link your local database to your production database, use `npx supabase link --project-ref [ref]`. Replace `[ref]` with your project reference. During this process, you'll be asked for your database password to apply migration scripts.
+4. Creating Migration Scripts Based on Changes:
+   - To compare the structure of the local and production databases, use `npx supabase db diff --use-migra [name] -f [name]`. This will generate a migration script that captures the required changes. For example, if it’s your first commit, run `npx supabase db diff --use-migrate init -f init`.
+   - To apply the new migration to your local database, run `supabase db reset`.
+5. Pushing Changes to the Production Database:
+   - You will need to integrate `.yml` code into your project. This can be found at: [Configure GitHub Actions](https://supabase.com/docs/guides/cli/managing-environments#configure-github-actions).
+   - It also requires adding `SUPABASE_ACCESS_TOKEN`, `PRODUCTION_DB_PASSWORD`, and `PRODUCTION_PROJECT_ID` to your Cloudflare Environment Variables.
+   - Alternatively, push the migration script to the production database by running `npx supabase db push`. This will execute the migration script and apply changes to the production database.
+
+By following these steps, you'll be able to connect your local and production databases, create and run a migration script, and insert the necessary `.yml` code into your project for updates in the production environment.
+
+## ⏮️ Performing Database Rollbacks
+
+To perform database rollbacks (i.e., downgrading the database), follow these steps:
+
+At present, Supabase does not have rollback functionality for migrations, as it only supports forward progression.
+
+You can create a new migration that undoes the previous migration's actions.
+
+In the future, we may consider switching to tools like Prisma that offer migration rollback capabilities. Alternatively, Supabase might introduce rollback functionality of its own.
+
+## 🪞 Setting up a Local Database Mirroring the Production Environment
+
+To set up a local databasethat mirrors the production environment, follow these steps:
+
+This process enables the creation of a staging or development environment database by replicating the production database and anonymizing the data within it.
+
+1. Create a snapshot using Snaplet:
+   - Sign up for Snaplet.
+   - Obtain the database string from Supabase.
+   - Follow the tutorial provided to create a snapshot.
+   - Run the command `curl -sL https://app.snaplet.dev/get-cli/ | bash` to install the Snaplet CLI.
+   - Set up Snaplet authentication by running `snaplet auth setup` (you'll need a `SNAPLET_ACCESS_TOKEN`).
+   - Set up the Snaplet project by running `snaplet project setup` and selecting your project.
+   - Configure Snaplet by running `snaplet config setup` and executing `npx supabase status` to retrieve the database URL.
+   - Finally, restore the latest snapshot to your target database by running `snaplet snapshot restore`. This command downloads the snapshot and applies it to your database.
+
+Following these steps will enable you to create a local database that closely resembles your production environment.
+
 ## 🧪 Testing
 
 For testing we will be using the recommended testing frameworks & libraries suggested by [Astro](https://docs.astro.build/en/guides/testing/#playwright).

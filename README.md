@@ -59,7 +59,7 @@ All commands are run from the root of the project, from a terminal:
 | `yarn run lint:style`      | Executes Stylelint to perform linting on all CSS files |
 | `yarn run lint:markup`     | Executes HTMLHint to perform linting on all HTML files |
 
-## ✈️ Database Migrations
+### ✈️ Database Migrations
 
 To update the production environment with local changes and push them to production, follow these steps:
 
@@ -80,9 +80,9 @@ To update the production environment with local changes and push them to product
    - It also requires adding `SUPABASE_ACCESS_TOKEN`, `PRODUCTION_DB_PASSWORD`, and `PRODUCTION_PROJECT_ID` to your Cloudflare Environment Variables.
    - Alternatively, push the migration script to the production database by running `npx supabase db push`. This will execute the migration script and apply changes to the production database.
 
-By following these steps, you'll be able to connect your local and production databases, create and run a migration script, and insert the necessary `.yml` code into your project for updates in the production environment.
+By following these instructions, you will be able to establish a connection between your local and production databases, execute migration scripts, and incorporate the required .yml code into your project to implement updates in the production environment. For more detailed information, please refer to this [documentation](https://coda.io/d/_dBp351mf4BL/DB-Migrations_surjH).
 
-## ⏮️ Performing Database Rollbacks
+### ⏮️ Performing Database Rollbacks
 
 To perform database rollbacks (i.e., downgrading the database), follow these steps:
 
@@ -92,7 +92,7 @@ You can create a new migration that undoes the previous migration's actions.
 
 In the future, we may consider switching to tools like Prisma that offer migration rollback capabilities. Alternatively, Supabase might introduce rollback functionality of its own.
 
-## 🪞 Setting up a Local Database Mirroring the Production Environment
+### 🪞 Setting up a Local Database Mirroring the Production Environment
 
 To set up a local databasethat mirrors the production environment, follow these steps:
 

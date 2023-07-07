@@ -49,7 +49,7 @@
     "eslint-plugin-react": "^7.32.2",
     "htmlhint": "^1.1.4",
     "prettier": "^2.5.1",
-    "stylelint": "15.9.0",
+    "stylelint": "15.10.1",
     "stylelint-config-standard": "^33.0.0",
     "typescript": "^4.4.4"
   }

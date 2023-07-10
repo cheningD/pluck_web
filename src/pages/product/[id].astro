@@ -4,7 +4,7 @@ import { swellClient } from '../../lib/swell';
 // Define all possible paths to be built at build time
 export async function getStaticPaths() {
   let ids: any[] = [];
-  const limit = 1; //How many results to return per request. Max 100
+  const limit = 100; //How many results to return per request. Max 100
 
   const initialResponse = await swellClient.products.list({
     limit,

@@ -1,0 +1,70 @@
+---
+import { swellClient } from '../../lib/swell';
+
+// Define all possible paths to be built at build time
+export async function getStaticPaths() {
+  let ids: any[] = [];
+  const limit = 1; //How many results to return per request. Max 100
+
+  const initialResponse = await swellClient.products.list({
+    limit,
+    page: 1,
+  });
+
+  const pageCount = initialResponse.page_count || 1; // getting total page count from initial response
+
+  for (let i = 1; i <= pageCount; i++) {
+    const response = await swellClient.products.list({
+      limit,
+      page: i, // making a request for each page
+    });
+
+    const currentPageIds = response.results.map((product) => {
+      return {
+        params: {
+          id: product.id,
+        },
+      };
+    });
+
+    const currentSlugs = response.results.map((product) => {
+      return {
+        params: {
+          id: product.slug,
+        },
+      };
+    });
+
+    ids = [...ids, ...currentPageIds, ...currentSlugs]; // combining ids from all pages
+  }
+
+  console.log(ids);
+
+  return ids;
+}
+
+const { id } = Astro.params;
+import { Product } from 'swell-js';
+const product: Product = await swellClient.products.get(id);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pluck | Buy {product.name}</title>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style/global.css" />
+  </head>
+  <body>
+    <div class="product-page">
+      <article>
+        <h1>{product.name}</h1>
+        <p>{product.description}</p>
+        <p>{product.price}</p>
+      </article>
+    </div>
+  </body>
+</html>

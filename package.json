@@ -36,6 +36,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "solid-js": "^1.7.6",
+    "swell-js": "^3.22.1",
     "vite": "^4.3.3"
   },
   "devDependencies": {

@@ -1,6 +1,7 @@
 ---
+export const prerender = false;
 import Layout from '../layouts/Layout.astro';
-import {} from '../auth';
+import { getUser } from '../auth';
 const user = await getUser(Astro.request);
 if (!user) {
   return Astro.redirect('/login');

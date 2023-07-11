@@ -37,14 +37,11 @@ export async function getStaticPaths() {
 
     ids = [...ids, ...currentPageIds, ...currentSlugs]; // combining ids from all pages
   }
-
-  console.log(ids);
-
   return ids;
 }
 
 const { id } = Astro.params;
-import { Product } from 'swell-js';
+import { type Product } from 'swell-js';
 const product: Product = await swellClient.products.get(id);
 ---
 

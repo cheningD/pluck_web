@@ -10,8 +10,8 @@ export default defineConfig({
   adapter: cloudflare(),
   vite: {
     define: {
-      'process.env.SWELL_STORE_ID': process.env.SWELL_STORE_ID,
-      'process.env.SWELL_PUBLIC_KEY': process.env.SWELL_PUBLIC_KEY,
+      VITE_DEFINE_SWELL_STORE_ID: process.env.SWELL_STORE_ID,
+      VITE_DEFINE_SWELL_PUBLIC_KEY: process.env.SWELL_PUBLIC_KEY,
     },
   },
 });

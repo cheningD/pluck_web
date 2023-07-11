@@ -8,4 +8,10 @@ export default defineConfig({
   integrations: [solidJs(), react()],
   output: 'hybrid',
   adapter: cloudflare(),
+  vite: {
+    define: {
+      'process.env.SWELL_STORE_ID': process.env.SWELL_STORE_ID,
+      'process.env.SWELL_PUBLIC_KEY': process.env.SWELL_PUBLIC_KEY,
+    },
+  },
 });

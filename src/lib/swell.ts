@@ -3,8 +3,8 @@ import swell from 'swell-js';
 declare const VITE_DEFINE_SWELL_PUBLIC_KEY: string;
 declare const VITE_DEFINE_SWELL_STORE_ID: string;
 
-const SWELL_STORE_ID = VITE_DEFINE_SWELL_STORE_ID;
-const SWELL_PUBLIC_KEY = VITE_DEFINE_SWELL_PUBLIC_KEY;
+const SWELL_STORE_ID = 'VITE_DEFINE_SWELL_STORE_ID';
+const SWELL_PUBLIC_KEY = 'VITE_DEFINE_SWELL_PUBLIC_KEY';
 console.log('SWELL_STORE_ID--~->', SWELL_STORE_ID);
 console.log('SWELL_PUBLIC_KEY--~->', SWELL_PUBLIC_KEY.substring(0, 5));
 

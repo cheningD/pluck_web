@@ -19,6 +19,8 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Test files
 /test-results/
 /playwright-report/
 /playwright/.cache/
@@ -28,5 +30,7 @@ pnpm-debug.log*
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+
 .snaplet/snapshots
 .snaplet/snaplet.d.ts

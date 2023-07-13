@@ -1,4 +1,5 @@
 ---
+export const prerender = false;
 import Layout from '../layouts/Layout.astro';
 import { getUser } from '../auth';
 const user = await getUser(Astro.request);

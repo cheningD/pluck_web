@@ -1,4 +1,5 @@
 ---
+export const prerender = false;
 const body = await Astro.request.json();
-Astro.response.headers.set("Set-Cookie", `sbat=${body.access_token}; Path=/;`);
+Astro.response.headers.set('Set-Cookie', `sbat=${body.access_token}; Path=/;`);
 ---

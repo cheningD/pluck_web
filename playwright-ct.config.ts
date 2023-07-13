@@ -21,10 +21,10 @@ export default defineConfig({
   reporter: [['list']],
   /* Launch a development web server during the tests. */
   webServer: {
-    command: 'npm run preview',
-    url: 'http://localhost:8788/',
-    timeout: 120 * 1000,
-    reuseExistingServer: !process.env.CI,
+    command: 'npm run start',
+    url: 'http://localhost:3000/', //'http://localhost:8788/',
+    timeout: 60 * 1000,
+    reuseExistingServer: false, //!process.env.CI,
   },
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

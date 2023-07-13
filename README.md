@@ -8,6 +8,10 @@ You will need the supabase variables to connect to supabase. Add them to a .env 
 `echo 'PUBLIC_SUPABASE_KEY=the_key_xxx' >> .env`
 `echo 'PUBLIC_REDIRECT_URL=http://localhost:3000/magic-link' >> .env`
 
+### 'to do'
+
+Add instructions for adding env vars at build time for cloudflare uding vite define
+
 ## Authentication
 
 Authentication is handled by supabase. Using <https://github.com/magnuswahlstrand/astro-supabase-vercel> as an example, we are able to check the user's login status, or query the database on the server.

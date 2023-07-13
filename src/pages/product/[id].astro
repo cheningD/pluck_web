@@ -6,10 +6,11 @@ export async function getStaticPaths() {
   let ids: any[] = [];
   const limit = 100; //How many results to return per request. Max 100
 
-  const initialResponse = await swellClient.products.list({
-    limit,
-    page: 1,
-  });
+  const initialResponse: ResultsResponse<Product> =
+    await swellClient.products.list({
+      limit,
+      page: 1,
+    });
 
   const pageCount = initialResponse.page_count || 1; // getting total page count from initial response
 
@@ -41,7 +42,7 @@ export async function getStaticPaths() {
 }
 
 const { id } = Astro.params;
-import { type Product } from 'swell-js';
+import { type Product, type ResultsResponse } from 'swell-js';
 const product: Product = await swellClient.products.get(id);
 ---
 

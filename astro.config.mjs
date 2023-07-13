@@ -13,7 +13,9 @@ export default defineConfig({
   // See: https://github.com/withastro/astro/issues/5234#issuecomment-1301903470
   vite: {
     define: {
+      // eslint-disable-next-line no-undef
       VITE_DEFINE_SWELL_STORE_ID: process.env.SWELL_STORE_ID,
+      // eslint-disable-next-line no-undef
       VITE_DEFINE_SWELL_PUBLIC_KEY: process.env.SWELL_PUBLIC_KEY,
     },
   },

@@ -8,9 +8,9 @@ You will need the supabase variables to connect to supabase. Add them to a .env 
 `echo 'PUBLIC_SUPABASE_KEY=the_key_xxx' >> .env`
 `echo 'PUBLIC_REDIRECT_URL=http://localhost:3000/magic-link' >> .env`
 
-### 'to do'
-
-Add instructions for adding env vars at build time for cloudflare uding vite define
+Any environment variables that need to be run at build time should be placed in astro.config.mjs in the vite.define object  
+This is required because otherwise cloudflare only registers env variables after the first request has been received.
+// See: https://github.com/withastro/astro/issues/5234#issuecomment-1301903470
 
 ## Authentication
 
